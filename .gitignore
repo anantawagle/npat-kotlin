@@ -1,0 +1,11 @@
+.gradle/
+**/build/
+**/build-bluetooth/
+local.properties
+.idea/
+*.iml
+emulator*.log
+.signing/
+*.jks
+*.keystore
+**/build-play/

@@ -1,0 +1,5 @@
+# Copy to .signing/upload.properties; never commit the real file or keystore.
+storeFile=.signing/npat-upload.jks
+storePassword=YOUR_PRIVATE_STORE_PASSWORD
+keyAlias=npat-upload
+keyPassword=YOUR_PRIVATE_KEY_PASSWORD

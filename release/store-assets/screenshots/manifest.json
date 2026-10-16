@@ -1,0 +1,37 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "format": "JPEG",
+  "screenshots": [
+    {
+      "file": "01-play.jpg",
+      "title": "One letter. Think fast.",
+      "nativeCapture": "raw/01-play.png"
+    },
+    {
+      "file": "02-bluetooth.jpg",
+      "title": "No internet? Still game on.",
+      "nativeCapture": "raw/02-bluetooth.png"
+    },
+    {
+      "file": "03-room.jpg",
+      "title": "Your friends. Your table.",
+      "nativeCapture": "raw/03-room.png"
+    },
+    {
+      "file": "04-categories.jpg",
+      "title": "Pick your perfect mix.",
+      "nativeCapture": "raw/04-categories.png"
+    },
+    {
+      "file": "05-review.jpg",
+      "title": "Good answer? You decide.",
+      "nativeCapture": "raw/05-review.png"
+    },
+    {
+      "file": "06-results.jpg",
+      "title": "Play. Score. Rematch.",
+      "nativeCapture": "raw/06-results.png"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+NPAT Privacy Policy
+Effective date: 16 October 2026
+
+NPAT is a multiplayer word game with online and nearby Bluetooth modes. This policy describes the Android app. You do not create an account to play.
+
+DATA STORED ON YOUR PHONE
+The app saves your chosen display name, a randomly generated player identifier, room references, and answer drafts in its private app storage. These help you reconnect and restore drafts. Clear the app's storage in Android Settings or uninstall it to remove these local records. Doing so does not delete records already stored in an online room or on another player's phone.
+
+ONLINE GAMES
+Online mode sends your display name, random player identifier, joining and game timestamps, answer drafts, submitted answers, readiness, votes and scores to the game's Google Firebase Realtime Database using HTTPS. The data is used to operate rooms and synchronize gameplay. Other players in your room can access shared room information. Public-room discovery exposes room and roster information. Private room codes limit normal discovery; they are not passwords or authentication. The database uses the existing website's access rules and should not be treated as private storage. Use a nickname and do not enter sensitive personal information in answers.
+
+Firebase receives network information needed to deliver the service, including your IP address. Provider logs and retention are governed by the service provider's practices. Google privacy information: https://policies.google.com/privacy
+
+NEARBY BLUETOOTH GAMES
+Bluetooth mode exchanges player names, identifiers, drafts, answers, votes, timestamps and scores directly with the host phone and other participants through paired Bluetooth connections. This mode does not send game data to Firebase. The host keeps the table in memory while its session exists. Other participants may retain or copy information they see. The app reads nearby or paired device names and addresses to help you select and connect to a host.
+
+PERMISSIONS
+On Android 12 and newer, Nearby devices permissions support discovering phones, making the host discoverable, and connecting. On Android 11 and older, Android requires Location permission for Bluetooth discovery. NPAT does not request geographic coordinates or use Bluetooth to derive your physical location. Internet access supports online rooms. Bluetooth play is optional.
+
+RETENTION AND DELETION
+There is no automatic time-based deletion of online rooms. A room disappears from normal public discovery after ten minutes of inactivity, but that is not deletion. Leaving removes your player roster entry and its current draft. Submitted answers, votes, scores, and other round records may remain until later game updates overwrite them or the room is deleted. The app deletes an online room when its final player explicitly leaves. Disconnecting or uninstalling does not remove your online seat. For deletion help, email cutlerylabs@gmail.com and provide the room code; do not send sensitive answer contents.
+
+ADS, ANALYTICS AND SHARING
+This Android build includes no advertising or analytics SDK. Game data is used for multiplayer functionality and displayed to participants; it is not sold by the app. The Share button sends invitation text to the app you choose. Android and the apps you choose may process data under their own policies.
+
+CONTACT AND CHANGES
+For privacy questions, support, or deletion requests, email cutlerylabs@gmail.com. This policy may be updated when the app's data handling changes.

@@ -1,6 +1,6 @@
 # Google Play release preparation
 
-The app targets Android 16 / API 36. Version 1.2 uses versionCode 3. Every later upload must increment versionCode. The application ID is `com.statsupdate.npat`; confirm it before the first Play upload because it identifies the app permanently.
+The app targets Android 16 / API 36. Version 1.2 uses versionCode 3. Every later upload must increment versionCode. The application ID for the first Play upload is `com.cutlerylabs.npat`; it identifies the app permanently. The Kotlin source namespace remains `com.statsupdate.npat`, which is separate from the published application ID.
 
 ## Signing
 

@@ -39,10 +39,10 @@ for extra in [('clock','--es','hhmm','0941'),('battery','--es','level','100','--
     call('shell','am','broadcast','-a','com.android.systemui.demo','--es','command',*extra)
 call('install','--no-streaming','-r','-t',str(args.apk.resolve()))
 time.sleep(2)
-result = call('shell','am','instrument','-w','com.statsupdate.npat/.ScreenshotInstrumentation')
+result = call('shell','am','instrument','-w','com.cutlerylabs.npat/com.statsupdate.npat.ScreenshotInstrumentation')
 if 'Captured six native screens' not in result:
     raise SystemExit('The screenshot instrumentation did not complete successfully.')
-archive = subprocess.run([str(adb),'-s',args.serial,'exec-out','run-as','com.statsupdate.npat','tar','-cf','-','files/store-captures'], check=True, capture_output=True).stdout
+archive = subprocess.run([str(adb),'-s',args.serial,'exec-out','run-as','com.cutlerylabs.npat','tar','-cf','-','files/store-captures'], check=True, capture_output=True).stdout
 output = ROOT / 'release/store-assets/screenshots/raw'
 output.mkdir(parents=True,exist_ok=True)
 count = 0

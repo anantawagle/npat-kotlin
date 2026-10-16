@@ -10,7 +10,7 @@ val uploadStore = signingValue("storeFile", "NPAT_UPLOAD_STORE_FILE")
 android {
     namespace = "com.statsupdate.npat"
     compileSdk = 36
-    defaultConfig { applicationId = "com.statsupdate.npat"; minSdk = 26; targetSdk = 36; versionCode = 3; versionName = "1.2" }
+    defaultConfig { applicationId = "com.cutlerylabs.npat"; minSdk = 26; targetSdk = 36; versionCode = 3; versionName = "1.2" }
     signingConfigs {
         if (uploadStore != null) create("upload") {
             storeFile = rootProject.file(uploadStore)

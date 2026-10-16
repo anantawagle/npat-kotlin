@@ -10,13 +10,14 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--serial', default='emulator-5554')
+parser.add_argument('--apk', type=Path, default=ROOT / 'app/build/outputs/apk/debug/app-debug.apk')
 args = parser.parse_args()
 if not args.serial.startswith('emulator-'):
     raise SystemExit('This helper is restricted to emulators; it does not alter personal phones.')
 sdk = Path(os.environ.get('ANDROID_HOME', str(Path.home() / 'AppData/Local/Android/Sdk')))
 adb = sdk / 'platform-tools/adb.exe'
 def call(*parts):
-    result = subprocess.run([str(adb), '-s', args.serial, *parts], check=True, capture_output=True)
+    result = subprocess.run([str(adb), '-s', args.serial, *parts], check=True, capture_output=True, timeout=120)
     output = result.stdout.decode('utf-8', errors='replace')
     if output.strip(): print(output.strip(), flush=True)
     return output
@@ -36,7 +37,7 @@ for setting in ('window_animation_scale','transition_animation_scale','animator_
 call('shell','settings','put','global','sysui_demo_allowed','1')
 for extra in [('clock','--es','hhmm','0941'),('battery','--es','level','100','--es','plugged','false'),('notifications','--es','visible','false')]:
     call('shell','am','broadcast','-a','com.android.systemui.demo','--es','command',*extra)
-call('install','-r','-t',str(ROOT / 'app/build-play/outputs/apk/debug/app-debug.apk'))
+call('install','--no-streaming','-r','-t',str(args.apk.resolve()))
 time.sleep(2)
 result = call('shell','am','instrument','-w','com.statsupdate.npat/.ScreenshotInstrumentation')
 if 'Captured six native screens' not in result:

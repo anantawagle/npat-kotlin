@@ -16,8 +16,8 @@ The app screens are actual Android 16 emulator captures of the native app's own 
 ## Recreate
 
 1. Start an Android emulator and note its serial from `adb devices`.
-2. Build the debug capture APK: `./gradlew --no-problems-report -I .gradle/play-build.init.gradle assembleDebug` (the local init script routes output to `app/build-play`). A normal build can instead be used by updating the APK path in the capture helper.
-3. Run `python scripts/capture-store-screenshots.py --serial emulator-5554`. This helper intentionally accepts emulator serials only. It sets that emulator to 1080×1920 at 320 dpi, removes animations and notifications, and installs the debug APK.
+2. Build the debug capture APK: `./gradlew --no-problems-report assembleDebug`.
+3. Run `python scripts/capture-store-screenshots.py --serial emulator-5554`. For an alternate build output, pass `--apk app/build-play/outputs/apk/debug/app-debug.apk`. This helper intentionally accepts emulator serials only. It sets that emulator to 1080×1920 at 320 dpi, removes animations and notifications, and installs the debug APK.
 4. Run `python scripts/build-store-screenshots.py`. It requires Python Playwright and its Chromium browser. Rendering is local, with no external fonts or assets.
 
 Capture-only instrumentation lives in `app/src/debug` and is excluded from release builds. It disables the scheduled network poller before the Activity starts, then renders sample state through the existing screen methods. The signed Play bundle does not contain the screenshot harness.

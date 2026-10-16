@@ -6,6 +6,7 @@ from pathlib import Path
 from html import escape
 import base64
 import json
+import zipfile
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,6 +80,11 @@ body{margin:0;padding:40px;background:#e8e8df;color:#243028;font:16px/1.5 system
         page.screenshot(path=str(OUTPUT / "contact-sheet.jpg"), type="jpeg", quality=90, full_page=True)
         browser.close()
     (OUTPUT / "manifest.json").write_text(json.dumps({"width":1080,"height":1920,"format":"JPEG","screenshots":[{"file":slug+'.jpg',"title":title,"nativeCapture":'raw/'+slug+'.png'} for slug,title in pages]}, indent=2), encoding="utf-8")
+    with zipfile.ZipFile(OUTPUT / "NPAT-store-screenshots.zip", 'w', zipfile.ZIP_DEFLATED) as archive:
+        for slug, _ in pages:
+            archive.write(OUTPUT / f"{slug}.jpg", f"{slug}.jpg")
+        for name in ('README.md', 'manifest.json'):
+            archive.write(OUTPUT / name, name)
     print("Created six upload-ready screenshots and a preview gallery.")
 
 if __name__ == '__main__':
